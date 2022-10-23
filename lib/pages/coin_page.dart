@@ -5,13 +5,13 @@ import '../models/coin.dart';
 import '../repositories/coin_repository.dart';
 
 class CoinPage extends StatelessWidget {
-  const CoinPage({super.key});
+  final coins = CoinRepository.coins;
+  NumberFormat real = NumberFormat.currency(locale: 'pt_Br', name: 'R\$');
+
+  CoinPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final coins = CoinRepository.coins;
-    NumberFormat real = NumberFormat.currency(locale: 'pt_Br', name: 'R\$');
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Cripto Moeda'),
